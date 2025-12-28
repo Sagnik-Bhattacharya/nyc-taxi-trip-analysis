@@ -122,3 +122,6 @@ excel_dashboard/NYC_Taxi_Trips_Analysis_Dashboard.xlsx
 
 ## 🧑‍💻 Author
 **Sagnik Bhattacharya**
+
+> Note: The Excel dashboard file is excluded from the repository due to size constraints. 
+> Screenshots and exported charts are provided for review.
