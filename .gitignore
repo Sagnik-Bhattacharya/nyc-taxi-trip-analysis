@@ -1,0 +1,10 @@
+# Data files
+data/raw/
+data/cleaned/
+
+# OS
+.DS_Store
+
+# Excel dashboards
+*.xlsx
+*.xlsm

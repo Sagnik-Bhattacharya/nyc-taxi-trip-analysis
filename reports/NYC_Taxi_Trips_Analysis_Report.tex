@@ -1,0 +1,125 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{caption}
+
+\title{NYC Taxi Trip Duration Analysis}
+\author{Sagnik Bhattacharya}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+This report presents a production-oriented exploratory data analysis of the NYC Taxi Trip Duration dataset. The objective is to uncover temporal demand patterns, trip behavior, and distance characteristics that can support operational and business decision-making. The analysis integrates data cleaning, feature engineering, SQL-based querying, and an interactive Excel dashboard for stakeholder-friendly insights.
+\end{abstract}
+
+\section{Dataset Attribution}
+This project uses the \textbf{NYC Taxi Trip Duration} dataset made publicly available by \textbf{Yasser H.} on Kaggle.
+
+\begin{itemize}
+    \item Source: Kaggle
+    \item Dataset: NYC Taxi Trip Duration
+    \item Author: Yasser H.
+    \item URL: \url{https://www.kaggle.com/datasets/yasserh/nyc-taxi-trip-duration}
+\end{itemize}
+
+The dataset is used solely for educational and analytical purposes.
+
+\section{Introduction}
+Urban mobility data plays a critical role in understanding transportation demand and commuter behavior. This report analyzes NYC taxi trip data to identify peak usage periods, weekday versus weekend trends, and trip distance distributions. The insights derived aim to replicate a real-world analytics workflow suitable for business intelligence and data analyst roles.
+
+\section{Dataset Description}
+The dataset contains over \textbf{1.45 million} taxi trips with the following key attributes:
+\begin{itemize}
+    \item Pickup datetime
+    \item Pickup hour and weekday
+    \item Passenger count
+    \item Trip distance (kilometers)
+    \item Trip duration (seconds)
+    \item Weekend indicator
+\end{itemize}
+
+\section{Methodology}
+The analysis followed a structured workflow:
+\begin{enumerate}
+    \item Data ingestion and validation
+    \item Data cleaning and anomaly handling
+    \item Feature engineering for temporal analysis
+    \item Exploratory analysis using visual analytics
+    \item KPI design and dashboard development
+\end{enumerate}
+
+\section{Data Cleaning and Feature Engineering}
+\begin{itemize}
+    \item Removed trips with zero or invalid duration values
+    \item Validated passenger count and trip distance ranges
+    \item Engineered time-based features such as pickup hour, weekday, and weekend flag
+    \item Created trip distance buckets for categorical analysis
+\end{itemize}
+
+\section{Exploratory Analysis}
+
+\subsection{Taxi Demand by Hour}
+Taxi demand shows a clear temporal pattern, with peak activity observed during evening commute hours (17:00–19:00), indicating strong work-related travel behavior.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../assets/charts/trips_by_hour_bar.png}
+    \caption{Trips by Hour}
+\end{figure}
+
+\subsection{Weekend vs Weekday Trips}
+Weekday trips dominate overall taxi usage, suggesting that taxis primarily support routine commuting rather than leisure travel.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{../assets/charts/weekend_vs_weekday_pie.png}
+    \caption{Weekend vs Weekday Trips}
+\end{figure}
+
+\subsection{Trip Distance Distribution}
+The majority of trips fall under short-distance categories (< 2 km), highlighting the role of taxis in short urban mobility rather than long-distance travel.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{../assets/charts/trip_distance_bucket_bar.png}
+    \caption{Trip Distance Distribution}
+\end{figure}
+
+\section{Key Performance Indicators}
+The following KPIs were derived to support business interpretation:
+\begin{itemize}
+    \item Total number of trips
+    \item Peak demand hour
+    \item Percentage of weekend trips
+    \item Distribution of trips by distance category
+\end{itemize}
+
+\section{Dashboard}
+An interactive Excel dashboard was developed to allow non-technical stakeholders to dynamically explore trip demand by time, distance, and weekday category.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{../assets/dashboard/nyc_taxi_dashboard_overview.png}
+    \caption{Excel Dashboard Overview}
+\end{figure}
+
+\section{SQL Analysis}
+Interview-grade SQL queries were written to:
+\begin{itemize}
+    \item Identify peak demand hours
+    \item Compare weekday and weekend trip volumes
+    \item Analyze trip distance distributions
+    \item Aggregate trip metrics for KPI computation
+\end{itemize}
+
+\section{Conclusion}
+This project demonstrates an end-to-end data analytics workflow using a large real-world dataset. The findings reveal strong weekday commuter demand and a predominance of short-distance taxi trips. The combination of data cleaning, SQL analysis, and dashboarding makes this project suitable for production environments and data analyst portfolios.
+
+\end{document}
